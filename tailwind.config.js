@@ -15,6 +15,13 @@ module.exports = {
     },
 
     extend: {
+      colors: {
+        blue: {
+          DEFAULT: '#004DE6',
+          hover: '#0044CC',
+          active: '#003CB3',
+        },
+      },
       zIndex: {
         '-10': '-10',
       },
