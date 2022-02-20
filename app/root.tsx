@@ -60,7 +60,7 @@ function App() {
         <Links />
         <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.requestInfo.theme)} />
       </head>
-      <body>
+      <body className="relative flex min-h-screen w-full flex-col bg-gray-900 text-white">
         <MainLayout>
           <Outlet />
         </MainLayout>
