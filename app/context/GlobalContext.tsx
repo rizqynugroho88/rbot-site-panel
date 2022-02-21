@@ -1,9 +1,38 @@
-import React from 'react'
+import React, { ReactNode, useContext, useState } from 'react'
 
-const GlobalContext = React.createContext({})
+type GlobalContextProps = {
+  navOpen: boolean
+  setNavOpen: React.Dispatch<any>
+}
 
-const GlobalProvider = () => {}
+const initial: GlobalContextProps = {
+  navOpen: true,
+  setNavOpen: () => {},
+}
 
-const useGlobalCtx = () => {}
+const GlobalContext = React.createContext<GlobalContextProps>(initial)
 
-export {}
+const GlobalProvider = ({ children }: { children: ReactNode }) => {
+  const [navOpen, setNavOpen] = useState(initial.navOpen)
+
+  return (
+    <GlobalContext.Provider
+      value={{
+        navOpen,
+        setNavOpen,
+      }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  )
+}
+
+const useGlobalCtx = () => {
+  const consumer = useContext<GlobalContextProps>(GlobalContext)
+  if (consumer === undefined) {
+    throw new Error('Place consumer in Provider')
+  }
+  return consumer
+}
+
+export { useGlobalCtx, GlobalProvider }

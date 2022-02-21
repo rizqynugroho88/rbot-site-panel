@@ -1,8 +1,12 @@
 import clsx from 'clsx'
+import { useGlobalCtx } from '~/context/GlobalContext'
 import { ContainerWrapper } from './Container'
+import { IconHamburger } from './Icon'
 import { H4, H6 } from './Typography'
 
 function Header({ className }: { className?: string }) {
+  const { navOpen, setNavOpen } = useGlobalCtx()
+
   return (
     <header
       className={clsx(
@@ -10,7 +14,18 @@ function Header({ className }: { className?: string }) {
         className,
       )}
     >
-      <ContainerWrapper>
+      <ContainerWrapper className="flex items-center gap-5">
+        <div
+          className={clsx(
+            'h-7 w-7 cursor-pointer transition-all duration-700',
+            {
+              'rotate-45 scale-150': navOpen,
+            },
+          )}
+          onClick={() => setNavOpen(!navOpen)}
+        >
+          <IconHamburger />
+        </div>
         <H4 as={'h1'}>Header</H4>
       </ContainerWrapper>
       <Profile />
