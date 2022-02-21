@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import { ContainerWrapper } from '~/components/Container'
 import { Header } from '~/components/Header'
 import { Navbar } from '~/components/Navbar'
 import { GlobalProvider } from '~/context/GlobalContext'
@@ -12,9 +11,7 @@ function MainLayout({ children }: { children: ReactNode }) {
         {/* Wrapper */}
         <div className="relative col-span-full row-span-full flex h-screen flex-col overflow-y-scroll lg:col-start-4 xl:col-start-3">
           <Header className="sticky top-0 bg-gray-900" />
-          <div>
-            <ContainerWrapper>{children}</ContainerWrapper>
-          </div>
+          {children}
         </div>
       </div>
     </GlobalProvider>

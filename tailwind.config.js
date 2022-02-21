@@ -9,6 +9,7 @@ module.exports = {
   darkMode: 'class',
   theme: {
     screens: {
+      sm: '400px',
       md: '640px',
       lg: '1024px',
       xl: '1500px', // this is the "design resolution"
