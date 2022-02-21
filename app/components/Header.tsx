@@ -1,9 +1,15 @@
+import clsx from 'clsx'
 import { ContainerWrapper } from './Container'
 import { H4, H6 } from './Typography'
 
-function Header() {
+function Header({ className }: { className?: string }) {
   return (
-    <header className="flex justify-between border-b-2 border-gray-700">
+    <header
+      className={clsx(
+        'flex justify-between border-b-2 border-gray-700',
+        className,
+      )}
+    >
       <ContainerWrapper>
         <H4 as={'h1'}>Header</H4>
       </ContainerWrapper>

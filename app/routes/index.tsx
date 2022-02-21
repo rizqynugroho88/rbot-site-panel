@@ -1,6 +1,6 @@
 import { Button } from '~/components/Button'
 import { Card } from '~/components/Card'
-import { Grid, GridLines } from '~/components/Grid'
+import { Grid } from '~/components/Grid'
 import { H6 } from '~/components/Typography'
 
 export default function Index() {
@@ -14,7 +14,8 @@ export default function Index() {
           <Card size="md">Test</Card>
         </Grid>
       </div>
-      <Button>Test</Button>
+      <Button variant="primary">Primary</Button>
+      <Button variant="warn">Warn</Button>
     </div>
   )
 }

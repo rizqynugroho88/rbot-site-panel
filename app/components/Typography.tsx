@@ -2,7 +2,7 @@ import * as React from 'react'
 import clsx from 'clsx'
 
 type TitleProps = {
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'custom'
   as?: React.ElementType
   className?: string
   id?: string
@@ -27,6 +27,7 @@ const fontSize = {
 const titleColors = {
   primary: 'text-black dark:text-white',
   secondary: 'text-gray-400 dark:text-blueGray-500',
+  custom: '',
 }
 
 function Title({

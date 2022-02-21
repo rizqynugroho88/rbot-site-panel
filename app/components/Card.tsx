@@ -7,6 +7,7 @@ const cardSizeVariantStyle = {
   md: 'col-span-4',
   lg: 'col-span-8',
   xl: 'col-span-full',
+  custome: '',
 }
 
 type CardProps = {
@@ -18,7 +19,7 @@ function Card({ children, size = 'md' }: CardProps) {
   return (
     <div
       className={clsx(
-        'min-h-[7rem] rounded-md bg-blue p-3 ',
+        'min-h-[7rem] rounded-md bg-team-yellow p-3 ',
         cardSizeVariantStyle[size],
       )}
     >

@@ -17,9 +17,27 @@ module.exports = {
     extend: {
       colors: {
         blue: {
-          DEFAULT: '#004DE6',
+          DEFAULT: 'var(--color-blue-500)',
           hover: '#0044CC',
-          active: '#003CB3',
+          active: 'var(--color-team-blue)',
+        },
+        gray: {
+          100: 'var(--color-gray-100)',
+          200: 'var(--color-gray-200)',
+          300: 'var(--color-gray-300)',
+          400: 'var(--color-gray-400)',
+          500: 'var(--color-gray-500)',
+          600: 'var(--color-gray-600)',
+          700: 'var(--color-gray-700)',
+          800: 'var(--color-gray-800)',
+          900: 'var(--color-gray-900)',
+        },
+        team: {
+          unknown: 'var(--color-team-unknown)',
+          current: 'var(--color-team-current)',
+          yellow: 'var(--color-team-yellow)',
+          blue: 'var(--color-team-blue)',
+          red: 'var(--color-team-red)',
         },
       },
       zIndex: {

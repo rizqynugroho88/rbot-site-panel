@@ -12,6 +12,7 @@ import {
 } from 'remix'
 import type { MetaFunction } from 'remix'
 import tailwindcssStyles from './styles/tailwind.css'
+import appStyles from './styles/app.css'
 import { MainLayout } from './layouts'
 import {
   NonFlashOfWrongThemeEls,
@@ -34,7 +35,10 @@ export const meta: MetaFunction = () => {
 }
 
 export const links: LinksFunction = () => {
-  return [{ rel: 'stylesheet', href: tailwindcssStyles }]
+  return [
+    { rel: 'stylesheet', href: tailwindcssStyles },
+    { rel: 'stylesheet', href: appStyles },
+  ]
 }
 
 export const loader: LoaderFunction = async ({ request }) => {
